@@ -1,0 +1,925 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://squidfunk.github.io/mkdocs-material/">
+      
+      
+        <meta name="author" content="Martin Donath">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Material for MkDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#k-nearest-neighbor" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Material for MkDocs
+            </span>
+            <span class="md-header-nav__topic">
+              Material
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." title="Material" class="md-tabs__link md-tabs__link--active">
+        Material
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="extensions/admonition.md" title="Extensions" class="md-tabs__link">
+          Extensions
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Material for MkDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Material
+      </label>
+    
+    <a href="." title="Material" class="md-nav__link md-nav__link--active">
+      Material
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian-k-nearest-neighbor" title="Pengertian K-NEAREST NEIGHBOR" class="md-nav__link">
+    Pengertian K-NEAREST NEIGHBOR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritma-k-nearest-neighbor" title="Algoritma K-NEAREST NEIGHBOR" class="md-nav__link">
+    Algoritma K-NEAREST NEIGHBOR
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="getting-started.md" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/admonition.md" title="Admonition" class="md-nav__link">
+      Admonition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/codehilite.md" title="CodeHilite" class="md-nav__link">
+      CodeHilite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/footnotes.md" title="Footnotes" class="md-nav__link">
+      Footnotes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/metadata.md" title="Metadata" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/permalinks.md" title="Permalinks" class="md-nav__link">
+      Permalinks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/pymdown.md" title="PyMdown" class="md-nav__link">
+      PyMdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="specimen.md" title="Specimen" class="md-nav__link">
+      Specimen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="customization.md" title="Customization" class="md-nav__link">
+      Customization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="compliance.md" title="Compliance with GDPR" class="md-nav__link">
+      Compliance with GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="release-notes.md" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="authors-notes.md" title="Author's notes" class="md-nav__link">
+      Author's notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="contributing.md" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="license.md" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian-k-nearest-neighbor" title="Pengertian K-NEAREST NEIGHBOR" class="md-nav__link">
+    Pengertian K-NEAREST NEIGHBOR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritma-k-nearest-neighbor" title="Algoritma K-NEAREST NEIGHBOR" class="md-nav__link">
+    Algoritma K-NEAREST NEIGHBOR
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="k-nearest-neighbor">K-NEAREST NEIGHBOR</small><a class="headerlink" href="#k-nearest-neighbor" title="Permanent link">&para;</a></h1>
+<h2 id="pengertian-k-nearest-neighbor">Pengertian K-NEAREST NEIGHBOR<a class="headerlink" href="#pengertian-k-nearest-neighbor" title="Permanent link">&para;</a></h2>
+<p>Algoritme <em>k-nearest neighbor</em> (k-NN atau KNN) adalah sebuah metode untuk melakukan <a href="https://id.wikipedia.org/wiki/Pengenalan_pola">klasifikasi</a> terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. </p>
+<p>Data pembelajaran diproyeksikan ke ruang berdimensi banyak,  dimana masing-masing dimensi merepresentasikan fitur dari data. Ruang  ini dibagi menjadi bagian-bagian berdasarkan klasifikasi data  pembelajaran. Sebuah titik pada ruang ini ditandai kelas <em>c</em> jika kelas <em>c</em> merupakan klasifikasi yang paling banyak ditemui pada <em>k</em> buah tetangga terdekat titk tersebut. Dekat atau jauhnya tetangga biasanya dihitung berdasarkan jarak Euclidean. </p>
+<p>Pada fase pembelajaran, algoritme ini hanya melakukan penyimpanan  vektor-vektor fitur dan klasifikasi dari data pembelajaran. Pada fase  klasifikasi, fitur-fitur yang sama dihitung untuk data test (yang  klasifikasinya tidak diketahui). Jarak dari vektor yang baru ini  terhadap seluruh vektor data pembelajaran dihitung, dan sejumlah <em>k</em>  buah yang paling dekat diambil. Titik yang baru klasifikasinya  diprediksikan termasuk pada klasifikasi terbanyak dari titik-titik  tersebut. </p>
+<p>Nilai <em>k</em> yang terbaik untuk algoritme ini tergantung pada data; secara umumnya, nilai <em>k</em> yang tinggi akan mengurangi efek <em>noise</em> pada klasifikasi, tetapi membuat batasan antara setiap klasifikasi menjadi lebih kabur. Nilai <em>k</em>  yang bagus dapat dipilih dengan optimasi parameter, misalnya dengan  menggunakan cross-validation. Kasus khusus di mana klasifikasi  diprediksikan berdasarkan data pembelajaran yang paling dekat (dengan  kata lain, <em>k</em> = 1) disebut algoritme <em>nearest neighbor</em>. </p>
+<p>Ketepatan algoritme k-NN ini sangat dipengaruhi oleh ada atau  tidaknya fitur-fitur yang tidak relevan, atau jika bobot fitur tersebut  tidak setara dengan relevansinya terhadap klasifikasi. Riset terhadap  algoritme ini sebagian besar membahas bagaimana memilih dan memberi  bobot terhadap fitur, agar performa klasifikasi menjadi lebih baik</p>
+<p>Algoritme k-NN ini memiliki konsistensi yang kuat. Ketika jumlah data mendekati tak hingga, algoritme ini menjamin <em>error rate</em> yang tidak lebih dari dua kali <em>Bayes error rate</em> (<em>error rate</em> minimum untuk distribusi data tertentu).</p>
+<h2 id="algoritma-k-nearest-neighbor">Algoritma K-NEAREST NEIGHBOR<a class="headerlink" href="#algoritma-k-nearest-neighbor" title="Permanent link">&para;</a></h2>
+<p>terdapat beberapa data yang menunjukkan wilayah kependudukan berdasarkan <em>latitude</em> dan <em>longitude</em> (atau garis lintang dan garis bujur) sebagai posisi untuk menentukan wilayah tersebut termasuk kota atau kabupaten pada wilayah bandung</p>
+<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn1.png" /></p>
+<p>Dari <em>data</em> diatas, kita mendapatkan beberapa informasi, diantaranya:</p>
+<ul>
+<li><strong>Independent Variables</strong>, yaitu variable yang nilainya <strong>tidak dipengaruhi</strong> oleh variable lain. Pada contoh <em>data</em> diatas, yang termasuk <em>independent variable</em> adalah <strong>Lat</strong>, dan <strong>Long</strong>.</li>
+<li><strong>Dependent Variables</strong>, yaitu <em>variable</em> yang nilainya <strong>dipengaruhi</strong> oleh <em>variable</em> lain. Pada contoh <em>data</em> diatas, yang termasuk <em>dependent variable</em> adalah <strong>Lokasi</strong>.</li>
+<li><strong>Rumah A-E</strong> adalah rumah yang masuk ke dalam wilayah <strong>Kota</strong>.</li>
+<li><strong>Rumah F-G</strong> adalah rumah yang masuk ke dalam wilayah <strong>Kabupaten</strong>.</li>
+<li><strong>Rumah X</strong> adalah rumah yang akan kita prediksi menggunakan algoritma kNN apakah termasuk ke dalam wilayah Kota atau Kabupaten.</li>
+</ul>
+<blockquote>
+<p>Didalam dunia <strong>Machine Learning</strong>, <strong>Independent Variables</strong> sering disebut juga sebagai <strong>Features</strong>.</p>
+</blockquote>
+<p>Selanjutnya kita hitung jarak antara rumah X terhadap rumah A-G dengan menggunakan rumus <strong>pythagoras</strong>:</p>
+<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn2.png" /></p>
+<p>Diketahui, dimana <strong>x</strong> adalah <strong>Lat</strong>, <strong>y</strong> adalah <strong>Long</strong>, sedangkan <strong>(x1, y1)</strong> adalah <em>lat</em> dan <em>long</em> dari <strong>rumah X</strong>, dan <strong>(x2, y2)</strong> adalah <em>lat</em> dan <em>long</em> dari <strong>masing-masing tetangganya</strong>.</p>
+<p>Setelah dihitung, selanjutnya adalah <strong>urutkan jarak tersebut dari yang paling kecil ke yang paling besar</strong>, hasilnya adalah sebagai berikut:</p>
+<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn3.png" /></p>
+<p>Dapat dilihat dari hasil perhitungan diatas, bahwa ternyata 3 tetangga terdekat dari rumah X adalah:</p>
+<ul>
+<li><strong>Rumah H</strong> (Kabupaten) yang memiliki jarak <strong>2.24</strong>,</li>
+<li><strong>Rumah C</strong> (Kota) yang memiliki jarak <strong>3</strong>, dan</li>
+<li><strong>Rumah E</strong> (Kota) yang memiliki jarak <strong>3.16</strong>.</li>
+</ul>
+<p>Dari ke-3 tetangga terdekat, terdapat <strong>2 rumah</strong> yang termasuk kedalam wilayah <strong>Kota</strong> dan <strong>1 rumah</strong> yang masuk ke dalam wilayah <strong>Kabupaten</strong>. Sehingga dapat disimpulkan, bahwa <strong>Rumah X adalah rumah yang termasuk kedalam wilayah Kota Bandung</strong>.</p>
+<h1 id="implementasi-k-nearest-neighbor-pada-python">Implementasi K-NEAREST NEIGHBOR pada python<a class="headerlink" href="#implementasi-k-nearest-neighbor-pada-python" title="Permanent link">&para;</a></h1>
+<p>hal yang diperlukan dalam pengimplementasian</p>
+<ul>
+<li>python 3.6</li>
+<li>download data pada laman berikut <a href="https://github.com/BULLZHIT/data/tree/master/knn">https://github.com/BULLZHIT/data/tree/master/knn</a></li>
+</ul>
+<h2 id="algoritma-k-mean-clustering-pada-python">Algoritma K-Mean Clustering pada python<a class="headerlink" href="#algoritma-k-mean-clustering-pada-python" title="Permanent link">&para;</a></h2>
+<p>setelah syarat terpunuhi kita dapat memulai pada langkah selanjutnya</p>
+<ul>
+<li>Import Data</li>
+</ul>
+<p>Hal pertama yang perlu kita lakukan adalah memuat file data kita. Data dalam format CSV tanpa baris header atau kutipan. Kita dapat membuka file dengan fungsi terbuka dan membaca baris data menggunakan fungsi pembaca dalam modul csv.  </p>
+<pre class="codehilite"><code class="language-python">import csv
+with open('iris.data', 'rb') as csvfile:
+    lines = csv.reader(csvfile)
+    for row in lines:
+        print ', '.join(row)</code></pre>
+
+<p>Selanjutnya kita perlu membagi data menjadi dataset training yang dapat digunakan  kNN untuk membuat prediksi dan dataset data testing yang dapat kita gunakan untuk mengevaluasi akurasi model.</p>
+<p>Pertama-tama kita perlu mengubah ukuran bunga yang dimuat sebagai string menjadi angka yang dapat kita kerjakan. Selanjutnya kita perlu membagi set data secara acak menjadi kereta dan dataset. Rasio 67/33 untuk ujicoba/ tes adalah rasio standar yang digunakan.</p>
+<p>Dengan menggabungkan semuanya, kita dapat membuat fungsi yang disebut loadDataset yang memuat CSV dengan nama file yang disediakan dan membaginya secara acak ke dalam train dan menguji dataset menggunakan rasio split yang disediakan.  </p>
+<pre class="codehilite"><code class="language-python">import csv
+import random
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+    with open(filename, 'rb') as csvfile:
+        lines = csv.reader(csvfile)
+        dataset = list(lines)
+        for x in range(len(dataset)-1):
+            for y in range(4):
+                dataset[x][y] = float(dataset[x][y])
+            if random.random() &lt; split:
+                trainingSet.append(dataset[x])
+            else:
+                testSet.append(dataset[x])</code></pre>
+
+<p>Unduh file CSV dataset dataset bunga iris ke direktori lokal. Kami dapat menguji fungsi ini dengan set data iris kami, sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">trainingSet=[]
+testSet=[]
+loadDataset('iris.data', 0.66, trainingSet, testSet)
+print 'Train: ' + repr(len(trainingSet))
+print 'Test: ' + repr(len(testSet))</code></pre>
+
+<ul>
+<li>Kesamaan</li>
+</ul>
+<p>Untuk membuat prediksi kita perlu menghitung kesamaan antara dua instance data yang diberikan. Ini diperlukan agar kita dapat menemukan contoh instans k yang paling mirip dalam dataset pelatihan untuk anggota tertentu dari dataset pengujian dan pada gilirannya membuat prediksi.</p>
+<p>Mengingat keempat pengukuran bunga bersifat numerik dan memiliki satuan yang sama, kita dapat langsung menggunakan ukuran jarak Euclidean. Ini didefinisikan sebagai akar kuadrat dari jumlah perbedaan kuadrat antara dua array angka (baca lagi beberapa kali dan biarkan meresap).</p>
+<p>Selain itu, kami ingin mengontrol bidang mana yang akan dimasukkan dalam perhitungan jarak. Secara khusus, kami hanya ingin menyertakan 4 atribut pertama. Salah satu pendekatan adalah membatasi jarak euclidean ke panjang tetap, mengabaikan dimensi akhir.</p>
+<p>Menyatukan semua ini, kita dapat mendefinisikan fungsi euclideanDistance sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">import math
+def euclideanDistance(instance1, instance2, length):
+    distance = 0
+    for x in range(length):
+        distance += pow((instance1[x] - instance2[x]), 2)
+    return math.sqrt(distance)</code></pre>
+
+<p>kita dapat menguji fungsi ini dengan beberapa data sampel, sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">data1 = [2, 2, 2, 'a']
+data2 = [4, 4, 4, 'b']
+distance = euclideanDistance(data1, data2, 3)
+print 'Distance: ' + repr(distance)</code></pre>
+
+<ul>
+<li>Tetangga</li>
+</ul>
+<p>Sekarang kita memiliki ukuran kesamaan, kita dapat menggunakannya mengumpulkan k contoh yang paling mirip untuk contoh yang tidak terlihat.</p>
+<p>Ini adalah proses langsung menghitung jarak untuk semua instance dan memilih subset dengan nilai jarak terkecil.</p>
+<p>Di bawah ini adalah fungsi getNeighbors yang mengembalikan k paling mirip tetangga dari set pelatihan untuk contoh uji yang diberikan (menggunakan fungsi euclideanDistance yang sudah ditentukan)</p>
+<pre class="codehilite"><code class="language-python">import operator 
+def getNeighbors(trainingSet, testInstance, k):
+    distances = []
+    length = len(testInstance)-1
+    for x in range(len(trainingSet)):
+        dist = euclideanDistance(testInstance, trainingSet[x], length)
+        distances.append((trainingSet[x], dist))
+    distances.sort(key=operator.itemgetter(1))
+    neighbors = []
+    for x in range(k):
+        neighbors.append(distances[x][0])
+    return neighbors</code></pre>
+
+<p>Kita dapat menguji fungsi ini sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">trainSet = [[2, 2, 2, 'a'], [4, 4, 4, 'b']]
+testInstance = [5, 5, 5]
+k = 1
+neighbors = getNeighbors(trainSet, testInstance, 1)
+print(neighbors)</code></pre>
+
+<ul>
+<li>Respon</li>
+</ul>
+<p>Setelah kami menemukan tetangga yang paling mirip untuk contoh pengujian, tugas selanjutnya adalah menyusun respons yang diprediksi berdasarkan tetangga tersebut.</p>
+<p>Kita dapat melakukan ini dengan mengizinkan setiap tetangga untuk memilih atribut kelas mereka, dan mengambil suara mayoritas sebagai prediksi.</p>
+<p>Di bawah ini menyediakan fungsi untuk mendapatkan respons suara terbanyak dari sejumlah tetangga. Diasumsikan kelas adalah atribut terakhir untuk setiap tetangga.</p>
+<pre class="codehilite"><code class="language-python">import operator
+def getResponse(neighbors):
+    classVotes = {}
+    for x in range(len(neighbors)):
+        response = neighbors[x][-1]
+        if response in classVotes:
+            classVotes[response] += 1
+        else:
+            classVotes[response] = 1
+    sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sortedVotes[0][0]</code></pre>
+
+<p>Kami dapat menguji fungsi ini dengan beberapa tetangga pengujian, sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">neighbors = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]
+response = getResponse(neighbors)
+print(response)</code></pre>
+
+<ul>
+<li>Akurasi</li>
+</ul>
+<p>Kami memiliki semua bagian dari algoritma kNN di tempatnya. Kekhawatiran penting yang tersisa adalah bagaimana mengevaluasi keakuratan prediksi.</p>
+<p>Cara mudah untuk mengevaluasi keakuratan model adalah dengan menghitung rasio total prediksi yang benar dari semua prediksi yang dibuat, yang disebut akurasi klasifikasi.</p>
+<p>Di bawah ini adalah fungsi getAccuracy yang menjumlahkan total prediksi yang benar dan mengembalikan akurasi sebagai persentase dari klasifikasi yang benar.</p>
+<pre class="codehilite"><code class="language-python">def getAccuracy(testSet, predictions):
+    correct = 0
+    for x in range(len(testSet)):
+        if testSet[x][-1] is predictions[x]:
+            correct += 1
+    return (correct/float(len(testSet))) * 100.0</code></pre>
+
+<p>kita dapat menguji fungsi ini dengan dataset uji dan prediksi, sebagai berikut:</p>
+<pre class="codehilite"><code class="language-python">testSet = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]
+predictions = ['a', 'a', 'a']
+accuracy = getAccuracy(testSet, predictions)
+print(accuracy)</code></pre>
+
+<ul>
+<li>Main</li>
+</ul>
+<p>Kita sekarang memiliki semua elemen algoritma dan Kita dapat mengikatnya bersama dengan fungsi utama.</p>
+<p>Di bawah ini adalah contoh lengkap penerapan algoritma kNN dari awal dengan Python.</p>
+<pre class="codehilite"><code class="language-python"># Example of kNN implemented from Scratch in Python
+
+import csv
+import random
+import math
+import operator
+
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+    with open(filename, 'rb') as csvfile:
+        lines = csv.reader(csvfile)
+        dataset = list(lines)
+        for x in range(len(dataset)-1):
+            for y in range(4):
+                dataset[x][y] = float(dataset[x][y])
+            if random.random() &lt; split:
+                trainingSet.append(dataset[x])
+            else:
+                testSet.append(dataset[x])
+
+
+def euclideanDistance(instance1, instance2, length):
+    distance = 0
+    for x in range(length):
+        distance += pow((instance1[x] - instance2[x]), 2)
+    return math.sqrt(distance)
+
+def getNeighbors(trainingSet, testInstance, k):
+    distances = []
+    length = len(testInstance)-1
+    for x in range(len(trainingSet)):
+        dist = euclideanDistance(testInstance, trainingSet[x], length)
+        distances.append((trainingSet[x], dist))
+    distances.sort(key=operator.itemgetter(1))
+    neighbors = []
+    for x in range(k):
+        neighbors.append(distances[x][0])
+    return neighbors
+
+def getResponse(neighbors):
+    classVotes = {}
+    for x in range(len(neighbors)):
+        response = neighbors[x][-1]
+        if response in classVotes:
+            classVotes[response] += 1
+        else:
+            classVotes[response] = 1
+    sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sortedVotes[0][0]
+
+def getAccuracy(testSet, predictions):
+    correct = 0
+    for x in range(len(testSet)):
+        if testSet[x][-1] == predictions[x]:
+            correct += 1
+    return (correct/float(len(testSet))) * 100.0
+
+def main():
+    # prepare data
+    trainingSet=[]
+    testSet=[]
+    split = 0.67
+    loadDataset('iris.data', split, trainingSet, testSet)
+    print 'Train set: ' + repr(len(trainingSet))
+    print 'Test set: ' + repr(len(testSet))
+    # generate predictions
+    predictions=[]
+    k = 3
+    for x in range(len(testSet)):
+        neighbors = getNeighbors(trainingSet, testSet[x], k)
+        result = getResponse(neighbors)
+        predictions.append(result)
+        print('&gt; predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+    accuracy = getAccuracy(testSet, predictions)
+    print('Accuracy: ' + repr(accuracy) + '%')
+
+main()</code></pre>
+
+<p>Menjalankan contoh, Anda akan melihat hasil dari setiap prediksi dibandingkan dengan nilai kelas aktual di set tes. Di akhir proses, Anda akan melihat keakuratan model. Dalam hal ini, sedikit di atas 98%.</p>
+<pre class="codehilite"><code class="language-python">...
+&gt; predicted='Iris-virginica', actual='Iris-virginica'
+&gt; predicted='Iris-virginica', actual='Iris-virginica'
+&gt; predicted='Iris-virginica', actual='Iris-virginica'
+&gt; predicted='Iris-virginica', actual='Iris-virginica'
+&gt; predicted='Iris-virginica', actual='Iris-virginica'
+Accuracy: 98.0392156862745%</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 Martin Donath
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="http://struct.cc" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/squidfunk" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/squidfunk" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/squidfunk" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
