@@ -621,7 +621,7 @@
 <p>Algoritme k-NN ini memiliki konsistensi yang kuat. Ketika jumlah data mendekati tak hingga, algoritme ini menjamin <em>error rate</em> yang tidak lebih dari dua kali <em>Bayes error rate</em> (<em>error rate</em> minimum untuk distribusi data tertentu).</p>
 <h2 id="algoritma-k-nearest-neighbor">Algoritma K-NEAREST NEIGHBOR<a class="headerlink" href="#algoritma-k-nearest-neighbor" title="Permanent link">&para;</a></h2>
 <p>terdapat beberapa data yang menunjukkan wilayah kependudukan berdasarkan <em>latitude</em> dan <em>longitude</em> (atau garis lintang dan garis bujur) sebagai posisi untuk menentukan wilayah tersebut termasuk kota atau kabupaten pada wilayah bandung</p>
-<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn1.png" /></p>
+<p><img alt="Material for MkDocs" src="assets/images/knn1.png" /></p>
 <p>Dari <em>data</em> diatas, kita mendapatkan beberapa informasi, diantaranya:</p>
 <ul>
 <li><strong>Independent Variables</strong>, yaitu variable yang nilainya <strong>tidak dipengaruhi</strong> oleh variable lain. Pada contoh <em>data</em> diatas, yang termasuk <em>independent variable</em> adalah <strong>Lat</strong>, dan <strong>Long</strong>.</li>
@@ -634,10 +634,10 @@
 <p>Didalam dunia <strong>Machine Learning</strong>, <strong>Independent Variables</strong> sering disebut juga sebagai <strong>Features</strong>.</p>
 </blockquote>
 <p>Selanjutnya kita hitung jarak antara rumah X terhadap rumah A-G dengan menggunakan rumus <strong>pythagoras</strong>:</p>
-<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn2.png" /></p>
+<p><img alt="Material for MkDocs" src="assets/images/knn2.png" /></p>
 <p>Diketahui, dimana <strong>x</strong> adalah <strong>Lat</strong>, <strong>y</strong> adalah <strong>Long</strong>, sedangkan <strong>(x1, y1)</strong> adalah <em>lat</em> dan <em>long</em> dari <strong>rumah X</strong>, dan <strong>(x2, y2)</strong> adalah <em>lat</em> dan <em>long</em> dari <strong>masing-masing tetangganya</strong>.</p>
 <p>Setelah dihitung, selanjutnya adalah <strong>urutkan jarak tersebut dari yang paling kecil ke yang paling besar</strong>, hasilnya adalah sebagai berikut:</p>
-<p><img alt="img" src="C:\Users\Jamuri\Desktop\knn\docs\assets\images\knn3.png" /></p>
+<p><img alt="Material for MkDocs" src="assets/images/knn3.png" /></p>
 <p>Dapat dilihat dari hasil perhitungan diatas, bahwa ternyata 3 tetangga terdekat dari rumah X adalah:</p>
 <ul>
 <li><strong>Rumah H</strong> (Kabupaten) yang memiliki jarak <strong>2.24</strong>,</li>
@@ -857,7 +857,7 @@ def main():
 
 main()</code></pre>
 
-<p>Menjalankan contoh, Anda akan melihat hasil dari setiap prediksi dibandingkan dengan nilai kelas aktual di set tes. Di akhir proses, Anda akan melihat keakuratan model. Dalam hal ini, sedikit di atas 98%.</p>
+<p>setelah program dijalankan akan menghasilkan output data dari setiap prediksi dibandingkan dengan nilai kelas aktual di data testing. Di akhir proses,akan menghasilkan keakuratan model. Dalam hal ini, sedikit di atas 98%.</p>
 <pre class="codehilite"><code class="language-python">...
 &gt; predicted='Iris-virginica', actual='Iris-virginica'
 &gt; predicted='Iris-virginica', actual='Iris-virginica'
